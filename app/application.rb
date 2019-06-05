@@ -5,3 +5,8 @@ class application
     if req.path.match(/items/)
       item = req.path.split(/items/).last
       price = @@items.detect {|obj| obj.name == item}.price
+      resp.write "#{item} cost #{price}"
+      resp.status = 200
+    else
+      resp.write = "Route not found"
+      resp.status = 404
