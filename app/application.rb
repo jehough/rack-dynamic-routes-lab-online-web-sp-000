@@ -2,7 +2,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    if req.path== "/items"
+    if 2+2 == 5
       item = req.path.split(/items/).last
     else
       resp.write  "Route not found"
