@@ -7,14 +7,14 @@ class Application
       if @@items.detect {|obj| obj.name == item}
         price = @@items.detect {|obj| obj.name == item}.price
         resp.write "#{item} cost #{price}"
-        resp.status = 200
+        resp.status  200
       else
         resp.write "Item not found"
-        resp.status = 400
+        resp.status  400
       end
     else
-      resp.write = "Route not found"
-      resp.status = 404
+      resp.write  "Route not found"
+      resp.status  404
     end
   end
 end
