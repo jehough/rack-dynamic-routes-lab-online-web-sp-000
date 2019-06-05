@@ -4,6 +4,7 @@ class application
     req = Rack::Request.new(env)
     if req.path.match(/items/)
       item = req.path.split(/items/).last
+      if @@items.detect {|obj| obj.name == item}
       price = @@items.detect {|obj| obj.name == item}.price
       resp.write "#{item} cost #{price}"
       resp.status = 200
